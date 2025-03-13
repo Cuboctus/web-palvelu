@@ -2,6 +2,7 @@ from wsgiref.simple_server import make_server
 
 def app(environ, respond):
     respond('200 OK', [('Content-type', 'text/html; charset=utf-8')])
+    yield "<p>moikka</p>"
     yield "Hello w€rld😞!".encode('utf-8')
     polku = environ["PATH_INFO"]
     #yield f"\n\nMinunkin lempiruoka on {polku}, se on oikein herkullista.".encode("UTF-8")
